@@ -5,7 +5,7 @@
 	date = relative
 	
 [alias]
-	nah = "!git reset --hard ; git clean -df"
+	nah = "!git reset --hard; git clean -df"
 	aa = add .
 	c = commit
 	co = checkout
@@ -15,6 +15,7 @@
 	rank = "shortlog -sn --no-merges"
 	dev = checkout develop
 	prod = checkout master
-
+	wip = "!git add --all; git commit -m \"wip\""
+	
 [help]
 	autocorrect = 1
