@@ -29,3 +29,4 @@ set softtabstop=4
 set expandtab
 set cursorline
 set showmatch
+set colorcolumn=80
