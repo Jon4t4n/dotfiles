@@ -11,11 +11,14 @@
 	date = format:%d.%m.%Y %H:%M:%S
 	
 [alias]
-	nah = "!git reset --hard ; git clean -df"
+	nah = "!git reset --hard && git clean -df"
 	co = checkout
 	s = status -sb
 	l = "log --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) %C(green)%ad%C(reset) %C(white)%<|(120,trunc)%s%C(reset)  %aN%C(reset)'"
 	rank = "shortlog -sn --no-merges"
 	
 [help]
-	autocorrect = 1
+    autocorrect = 1
+
+[pager]
+    branch = false
