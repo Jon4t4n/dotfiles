@@ -14,8 +14,9 @@
 	nah = "!git reset --hard && git clean -df"
 	co = checkout
 	s = status -sb
-	l = "log --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) %C(green)%ad%C(reset) %C(white)%<|(120,trunc)%s%C(reset)  %aN%C(reset)'"
-	rank = "shortlog -sn --no-merges"
+    l = "log --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) %C(green)%ad%C(reset) %C(white)%<|(120,trunc)%s%C(reset)  %aN%C(reset)'"
+    lg = log --oneline --graph
+    rank = "shortlog -sn --no-merges"
 	
 [help]
     autocorrect = 1
