@@ -1,19 +1,19 @@
 [include]
-	path = ~/.gitconfig_local
+    path = ~/.gitconfig_local
 
 [core]
-	commentchar = %
+    commentchar = %
 	
 [color]
-	ui = true	
+    ui = true	
 	
 [log]
-	date = format:%d.%m.%Y %H:%M:%S
+    date = format:%d.%m.%Y %H:%M:%S
 	
 [alias]
-	nah = "!git reset --hard && git clean -df"
-	co = checkout
-	s = status -sb
+    nah = "!git reset --hard && git clean -df"
+    co = checkout
+    s = status -sb
     l = "log --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) %C(green)%ad%C(reset) %C(white)%<|(120,trunc)%s%C(reset)  %aN%C(reset)'"
     lg = log --oneline --graph
     rank = "shortlog -sn --no-merges"
