@@ -35,4 +35,5 @@ set cursorline
 set showmatch
 set colorcolumn=80
 
+set spellfile=~/.vim/spell/en.utf-8.add
 autocmd FileType markdown,tex setlocal spell
