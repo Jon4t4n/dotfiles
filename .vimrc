@@ -1,16 +1,13 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 
-call vundle#begin()
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-
-call vundle#end() 
+call plug#end()
 
 filetype plugin indent on
 
