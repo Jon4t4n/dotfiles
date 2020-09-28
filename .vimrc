@@ -3,17 +3,29 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+
+" Themes
+Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 filetype plugin indent on
 
 syntax on
-let g:gruvbox_guisp_fallback = "bg"
-colorscheme gruvbox
-set background=dark
+"let g:gruvbox_guisp_fallback = "bg"
+"colorscheme gruvbox
+"set background=dark
+
+let g:solarized_termcolors=256
+"set t_Co=256
+colorscheme solarized
+set background=light
+let g:syntastic_carp_checkers = ['carp']
 
 set noerrorbells
 set vb t_vb=
@@ -27,9 +39,22 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-set cursorline
+"set cursorline
 set showmatch
 set colorcolumn=80
+
+let g:airline_powerline_fonts = 1
+let g:limelight_conceal_ctermfg = 1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 3
+
+inoremap jj <esc>
+nnoremap ; :
 
 set spellfile=~/.vim/spell/en.utf-8.add
 autocmd FileType markdown,tex setlocal spell
