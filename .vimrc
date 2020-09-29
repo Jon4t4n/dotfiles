@@ -39,9 +39,18 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
-"set cursorline
+set cursorline
 set showmatch
 set colorcolumn=80
+
+" Toggle relative  line numbers (insert/normal mode)
+set number relativenumber
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 let g:airline_powerline_fonts = 1
 let g:limelight_conceal_ctermfg = 1
