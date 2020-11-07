@@ -3,21 +3,21 @@
 
 [core]
     commentchar = %
-	
+
 [color]
-    ui = true	
-	
+    ui = true
+
 [log]
     date = format:%d.%m.%Y %H:%M:%S
-	
+
 [alias]
     nah = "!git reset --hard && git clean -df"
     co = checkout
     s = status -sb
-    l = "log --abbrev-commit --decorate --format=format:'[%C(cyan)%h%C(reset)] [%C(green)%ad%C(reset)] [%<(15,trunc)%aN%C(reset)] %C(white)%<|(120,trunc)%s%C(reset)'"
+    l = "log --abbrev-commit --decorate --format=format:'[%C(cyan)%h%C(reset)] [%C(green)%ad%C(reset)] [%<(15,trunc)%aN%C(reset)] %<(80,trunc)%s%C(reset)'"
     lg = log --oneline --graph
     rank = "shortlog -sn --no-merges"
-	
+
 [help]
     autocorrect = 1
 

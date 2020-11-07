@@ -3,9 +3,11 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ycm-core/YouCompleteMe'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -21,8 +23,12 @@ syntax on
 "colorscheme gruvbox
 "set background=dark
 
-let g:solarized_termcolors=256
-"set t_Co=256
+augroup SpellUnderline
+    autocmd!
+    autocmd ColorScheme *  highlight SpellBad cterm=standout ctermfg=Red
+augroup END
+
+set t_Co=256
 colorscheme solarized
 set background=light
 let g:syntastic_carp_checkers = ['carp']
@@ -65,5 +71,15 @@ let g:syntastic_loc_list_height = 3
 inoremap jj <esc>
 nnoremap ; :
 
+" window navigation
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+
+" remove white space on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 set spellfile=~/.vim/spell/en.utf-8.add
 autocmd FileType markdown,tex setlocal spell
+
