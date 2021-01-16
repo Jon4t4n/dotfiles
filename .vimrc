@@ -7,7 +7,6 @@ Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ycm-core/YouCompleteMe'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -49,6 +48,22 @@ set cursorline
 set showmatch
 set colorcolumn=80
 
+" ----------------------------------------------------------------------------
+" <tab> / <s-tab> | Circular windows navigation
+" ----------------------------------------------------------------------------
+nnoremap <tab> gt
+nnoremap <S-tab> gT
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+set noshowmode
+let g:airline_powerline_fonts = 1
+let g:limelight_conceal_ctermfg = 1
+let g:airline#extensions#tabline#enabled = 1
+
 " Toggle relative  line numbers (insert/normal mode)
 set number relativenumber
 
@@ -62,9 +77,18 @@ let g:airline_powerline_fonts = 1
 let g:limelight_conceal_ctermfg = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive',
+                            \ 'active_filetypes': ['javascript', 'jsx', 'cpp', 'h' ],
+                            \ 'passive_filetypes': [] }
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 3
 
